@@ -14,4 +14,13 @@ RUN apt-get update \
 
 EXPOSE 5432
 
-VOLUME ["/var/lib/postgresql/data"]
+# VOLUME ["/var/lib/postgresql/data"]
+
+
+COPY druga/druga_data/simplified_data/*.csv /csvs/
+COPY druga/scripts/ /scripts/
+COPY druga/scripts/00_main.sql /docker-entrypoint-initdb.d/
+
+# automatic excecution at startup
+# COPY scripts/00_main.sql /docker-entrypoint-initdb.d/
+# COPY druga/druga_data/scripts/00_main.sql /docker-entrypoint-initdb.d/

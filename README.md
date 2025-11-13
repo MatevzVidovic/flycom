@@ -14,6 +14,38 @@ docker run -d --name basic_pgsql-container -p 5432:5432 basic_pgsql
 
 
 
+### Terminal
+
+docker exec -it basic_pgsql-container psql -U postgres -d basicDB
+
+\dt+                    -- List tables with more details
+\d table_name           -- Describe a specific table structure
+\l                      -- List all databases
+\dn                     -- List all schemas
+\d+ table_name          -- Get detailed info about a table (columns, indexes, constraints)
+\dt *.*                 -- List all tables in all schemas
+\di          # list indexes
+\df          # list functions
+\q                      -- Exit psql
+
+
+\i /scripts/0_schema_and_copy.sql
+
+docker exec -it basic_pgsql-container psql -U postgres -d basicDB -f /scripts/0_schema_and_copy.sql
+
+
+
+
+
+SELECT points.potencial_stat FROM points LIMIT 20 OFFSET 10;
+
+
+
+
+
+
+
+
 
 
 
