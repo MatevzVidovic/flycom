@@ -6,8 +6,8 @@ import pandas as pd
 
 
 
-# df = pd.read_csv("./testni_dan_matevz/testni_dan_matevz/priloge_naloga_1", sep=',', header='infer', names=None, index_col=None, usecols=None, dtype=None, ...)
-df = pd.read_csv("./testni_dan_matevz/testni_dan_matevz/priloge_naloga_1/pp_kp_trans.csv", sep=',', header='infer', usecols=["dat_pri", "datum_prve_uveljavitve_posla"])
+# df = pd.read_csv("./testni_dan_matevz/testni_dan_matevz/priloge_naloga_1/pp_kp_trans.csv", sep=',', header='infer', usecols=["dat_pri", "datum_prve_uveljavitve_posla"])
+df = pd.read_csv("./prva_data/pp_kp_trans.csv", sep=',', header='infer', usecols=["dat_pri", "datum_prve_uveljavitve_posla"])
 print(df)
 
 
